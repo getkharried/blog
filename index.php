@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="fr">
+<html>
 
 <head>
     <title>Blog</title>
@@ -25,10 +24,10 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Accueil <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="index.php">Accueil <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Créer un post</a>
+                    <a class="nav-link" href="createPost.php">Créer un post</a>
                 </li>
             </ul>
 
@@ -68,7 +67,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="col-md-4">
                 <div class="card mb-4 shadow-sm">
                     <img src="https://static1.purebreak.com/articles/1/70/46/1/@/298221-peluche-diapo-1.jpg" class="card-img-top">
@@ -86,7 +84,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="col-md-4">
                 <div class="card mb-4 shadow-sm">
                     <img src="https://static1.purebreak.com/articles/1/70/46/1/@/298221-peluche-diapo-1.jpg" class="card-img-top">
@@ -104,7 +101,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="col-md-4">
                 <div class="card mb-4 shadow-sm">
                     <img src="https://static1.purebreak.com/articles/1/70/46/1/@/298221-peluche-diapo-1.jpg" class="card-img-top">
@@ -122,7 +118,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="col-md-4">
                 <div class="card mb-4 shadow-sm">
                     <img src="https://static1.purebreak.com/articles/1/70/46/1/@/298221-peluche-diapo-1.jpg" class="card-img-top">
@@ -140,7 +135,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="col-md-4">
                 <div class="card mb-4 shadow-sm">
                     <img src="https://static1.purebreak.com/articles/1/70/46/1/@/298221-peluche-diapo-1.jpg" class="card-img-top">
@@ -159,8 +153,7 @@
                 </div>
             </div>
         </div>
-
-        <footer class="blog-footer">
+        <footer class="text-muted">
             Créé par Louis Pelarrey
         </footer>
     </div>
