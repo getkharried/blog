@@ -7,12 +7,23 @@ use App\src\config\Database;
 
 class Client
 {
-    public function getClient()
+    private $id;
+    private $firstName;
+    private $lastName;
+    private $pass;
+    private $isAdmin;
+    private $avatarPath;
+    private $lastConnection;
+    private $mail;
+
+    public function getFirstName() : string
     {
-        $database = new Database;
-        $db = $database->getConnection();
-        $result = $db->query('SELECT * FROM `client`');
-        return $result->fetchAll();
+        return $this->firstName;
+    }
+
+    public function setFirstName($firstName)
+    {
+        $this->firstName = $firstName;
     }
 }
 ?>
