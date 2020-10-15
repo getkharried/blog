@@ -3,8 +3,6 @@ namespace App\src\model;
 
 require_once('vendor\autoload.php');
 
-use App\src\config\Database;
-
 class Client
 {
     private $id;
