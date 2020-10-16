@@ -2,15 +2,16 @@
 
 namespace App\src\controller;
 
-use App\src\repository\AjoutPostRepo;
+use App\src\model\Post;
 use App\src\repository\PostRepository;
 
-class PostController{
+class PostController
+{
     private $postRepo;
 
     public function __construct()
     {
-        if(isset($this->postRepo)){
+        if (!isset($this->postRepo)) {
             $this->postRepo = new PostRepository;
         }
     }
@@ -18,31 +19,32 @@ class PostController{
     public function list()
     {
         $posts = $this->postRepo->getPosts();
-        ob_start();
         require('templates/home.php');
-        $output = ob_get_clean();
-        echo($output);
+        echo ($output);
     }
 
-    public function create($idClient, $content, $title)
+    public function create()
     {
-        $this->postRepo->insertPost($idClient, $content, $title);
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $post = new Post;
+            $post->setIdClient($_POST['idClient']);
+            $post->setContent($_POST['content']);
+            $post->setTitle($_POST['title']);
+            $this->postRepo->insertPost($post);
+        }
+
+        require('templates/ajout.php');
     }
 
     public function read()
     {
-        
     }
 
     public function update()
     {
-        
     }
 
     public function delete()
     {
-        
     }
-    
 }
-?>

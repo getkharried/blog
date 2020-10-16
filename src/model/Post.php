@@ -1,9 +1,11 @@
 <?php
+
 namespace App\src\model;
 
 require_once('vendor\autoload.php');
 
-class Post{
+class Post
+{
 
     private $id;
     private $idClient;
@@ -20,7 +22,7 @@ class Post{
 
     public function getIdClient()
     {
-        return $this->idClient;
+        return (int)$this->idClient;
     }
 
     public function getContent()
@@ -47,5 +49,22 @@ class Post{
     {
         return $this->deletedAt;
     }
+
+    public function setTitle($title)
+    {
+        $this->title = $title;
+        return $this;
+    }
+
+    public function setContent($content)
+    {
+        $this->content = $content;
+        return $this;
+    }
+
+    public function setIdClient($idClient)
+    {
+        $this->idClient = $idClient;
+        return $this;
+    }
 }
-?>
