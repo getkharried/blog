@@ -2,20 +2,31 @@
 
 namespace App\src\controller;
 
+use App\src\repository\AjoutPostRepo;
 use App\src\repository\PostRepository;
 
 class PostController{
+    private $postRepo;
+
+    public function __construct()
+    {
+        if(isset($this->postRepo)){
+            $this->postRepo = new PostRepository;
+        }
+    }
 
     public function list()
     {
-        $postRepo = new PostRepository;
-        $posts = $postRepo->getPosts();
-        require('templates/postView.php');
+        $posts = $this->postRepo->getPosts();
+        ob_start();
+        require('templates/home.php');
+        $output = ob_get_clean();
+        echo($output);
     }
 
-    public function create()
+    public function create($idClient, $content, $title)
     {
-
+        $this->postRepo->insertPost($idClient, $content, $title);
     }
 
     public function read()

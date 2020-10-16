@@ -8,7 +8,7 @@ class ClientRepository
     public function getClient()
     {
         $database = new Database;
-        $db = $database->getConnection();
+        $db = $database->checkConnection();
         $result = $db->query('SELECT * FROM `client`');
         return $result->fetchAll(\PDO::FETCH_ASSOC);
     }
