@@ -1,5 +1,5 @@
 <?php
-namespace App\repository;
+namespace App\src\repository;
 
 use App\src\config\Database;
 
@@ -10,7 +10,7 @@ class ClientRepository
         $database = new Database;
         $db = $database->getConnection();
         $result = $db->query('SELECT * FROM `client`');
-        return $result->fetchAll();
+        return $result->fetchAll(\PDO::FETCH_ASSOC);
     }
 }
 ?>

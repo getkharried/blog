@@ -23,5 +23,20 @@ class Client
     {
         $this->firstName = $firstName;
     }
+
+    public function getLastName()
+    {
+        return $this->lastName;
+    }
+
+    public function getPass()
+    {
+        return $this->pass;
+    }
+
+    public function getIsAdmin()
+    {
+        return $this->isAdmin;
+    }
 }
 ?>
