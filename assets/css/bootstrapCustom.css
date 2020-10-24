@@ -5,3 +5,20 @@
     color: white;
     margin-right: 5px;
 }
+.container{
+    margin-top: 20px;
+}
+.imgTitle{
+    display: block;
+    padding-top: 20px;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+.title{
+    text-align: center;
+}
+.text{
+    text-align: center;
+
+;}

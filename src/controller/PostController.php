@@ -20,13 +20,13 @@ class PostController
     {
         $posts = $this->postRepo->getPosts();
         require('templates/home.php');
-        echo ($output);
     }
 
     public function create()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $post = new Post;
+            $post->setLink($_POST['link']);
             $post->setIdClient($_POST['idClient']);
             $post->setContent($_POST['content']);
             $post->setTitle($_POST['title']);
@@ -38,13 +38,48 @@ class PostController
 
     public function read()
     {
+        if($_GET['id'] != null){
+            $post = $this->postRepo->getPost($_GET['id']);
+            require('templates/post.php');
+        }else
+            header('Location: index.php/?page=post&action=list');
     }
 
     public function update()
     {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $post = new Post;
+            $post->setId($_GET['id']);
+            $post->setLink($_POST['link']);
+            $post->setIdClient($_POST['idClient']);
+            $post->setContent($_POST['content']);
+            $post->setTitle($_POST['title']);
+            $this->postRepo->updatePost($post);
+        }
+
+        if($_GET['id'] != null){
+            $post = $this->postRepo->getPost($_GET['id']);
+            require('templates/edit.php');
+        }else
+            header('Location: index.php?page=post&action=list');
     }
 
     public function delete()
     {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $post = new Post;
+            $post->setId($_GET['id']);
+            $post->setLink($_POST['link']);
+            $post->setIdClient($_POST['idClient']);
+            $post->setContent($_POST['content']);
+            $post->setTitle($_POST['title']);
+            $this->postRepo->updatePost($post);
+        }
+
+        if($_GET['id'] != null){
+            $post = $this->postRepo->getPost($_GET['id']);
+            require('templates/edit.php');
+        }else
+            header('Location: index.php?page=post&action=list');
     }
 }

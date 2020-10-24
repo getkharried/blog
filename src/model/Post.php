@@ -6,11 +6,11 @@ require_once('vendor\autoload.php');
 
 class Post
 {
-
     private $id;
     private $idClient;
     private $content;
     private $title;
+    private $link;
     private $createdAt;
     private $updatedAt;
     private $deletedAt;
@@ -35,6 +35,11 @@ class Post
         return $this->title;
     }
 
+    public function getLink()
+    {
+        return $this->link;
+    }
+
     public function getCreatedAt()
     {
         return $this->createdAt;
@@ -48,6 +53,12 @@ class Post
     public function getDeletedAt()
     {
         return $this->deletedAt;
+    }
+
+    public function setId($id)
+    {
+        $this->id = $id;
+        return $this;
     }
 
     public function setTitle($title)
@@ -65,6 +76,12 @@ class Post
     public function setIdClient($idClient)
     {
         $this->idClient = $idClient;
+        return $this;
+    }
+
+    public function setLink($link)
+    {
+        $this->link = $link;
         return $this;
     }
 }
