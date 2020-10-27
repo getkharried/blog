@@ -1,10 +1,11 @@
 <?php ob_start(); ?>
 <div class="container">
-    <?php if (isset($_SESSION['error'])) { ?>
-        <div class="alert alert-warning">
-            <strong>Attention!</strong> Vos identifiants sont incorrects
-        </div>
-    <?php } ?>
+    <div class="alert alert-warning">
+        <?php if (null !== $this->session->get('error')) {
+            echo $this->session->showFlashMessage('error');
+        } ?>
+    </div>
+
     <form action="?page=client&action=read" method="POST">
         <div class="row">
             <div class="form-group col">

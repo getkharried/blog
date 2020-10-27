@@ -69,7 +69,6 @@ class ClientController{
         }
         
         require_once 'templates/login.php';
-        $this->session->remove('error');
     }
 
     public function update()

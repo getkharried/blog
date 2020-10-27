@@ -15,9 +15,14 @@
             return null;
         }
 
-        public function checkSession()
+        public function showFlashMessage($nom)
         {
-            return isset($_SESSION['username']);
+            if(isset($_SESSION[$nom])){
+                $message = $this->get($nom);
+                $this->remove($nom);
+                return $message;
+            }
+            return null;
         }
 
         public function remove($nom)
