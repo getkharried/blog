@@ -20,8 +20,8 @@
         <button type="submit" class="btn btn-primary">Envoyer son post</button>
     </form>
 </div>
-<script type="text/javascript" src="assets/js/update.js"></script>
 <?php
+echo 'Bienvenue ' . $_SESSION['username'];
 $body = ob_get_clean();
 require('template.php');
 ?>

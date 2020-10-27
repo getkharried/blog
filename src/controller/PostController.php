@@ -38,15 +38,20 @@ class PostController
 
     public function read()
     {
-        if($_GET['id'] != null){
-            $post = $this->postRepo->getPost($_GET['id']);
-            require('templates/post.php');
-        }else
-            header('Location: index.php/?page=post&action=list');
+        if(isset($_GET['id'])) {
+            header('Location: index.php?page=post&action=list');
+        }
+
+        $post = $this->postRepo->getPost($_GET['id']);
+        require('templates/post.php');
     }
 
     public function update()
     {
+        if(isset($_GET['id'])) {
+            header('Location: index.php?page=post&action=list');
+        }
+
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $post = new Post;
             $post->setId($_GET['id']);
@@ -57,19 +62,18 @@ class PostController
             $this->postRepo->updatePost($post);
         }
 
-        if($_GET['id'] != null){
-            $post = $this->postRepo->getPost($_GET['id']);
-            require('templates/edit.php');
-        }else
-            header('Location: index.php?page=post&action=list');
+        $post = $this->postRepo->getPost($_GET['id']);
+        require('templates/edit.php');
     }
 
     public function delete()
     {
-        if($_GET['id'] != null){
-            $post = $this->postRepo->deletePost($_GET['id']);
-            require('templates/edit.php');
-        }else
+        if(isset($_GET['id'])) {
             header('Location: index.php?page=post&action=list');
+        }
+
+        $this->postRepo->deletePost($_GET['id']);
+
+        require('templates/edit.php');       
     }
 }
