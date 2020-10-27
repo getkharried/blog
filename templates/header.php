@@ -15,16 +15,15 @@
                 </li>
             </ul>
 
-            <li class="nav-item dropdown">
-                <i class="fas fa-user-circle fa-white fa-2x nav-link nav-item dropdown" href="#" id="profile" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #FFF"></i> 
-                
+            <div class="nav-item dropdown">
+                <i class="fas fa-user-circle fa-white fa-2x nav-link nav-item" id="profile" role="button" data-toggle="dropdown" aria-expanded="false"></i>
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="#">Voir mon profil</a>
                     <a class="dropdown-item" href="#">Paramètres</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="#">Se déconnecter</a>
                 </div>
-            </li>
+            </div>
 
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Rechercher" aria-label="Rechercher">

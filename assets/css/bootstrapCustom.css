@@ -20,5 +20,11 @@
 }
 .text{
     text-align: center;
-
-;}
+}
+.card-img-top{
+    width: auto;
+    height: 250px;
+}
+footer{
+    margin-left: 200px;
+}

@@ -1,6 +1,6 @@
-<?php ob_start();?>
+<?php ob_start(); ?>
 <div class="container" id="ajout">
-    <form action="index.php?page=post&action=create" method="POST" >
+    <form action="index.php?page=post&action=create" method="POST">
         <input type="hidden" name="idClient" value="1">
         <div class="row">
             <div class="form-group col">
@@ -20,8 +20,8 @@
 
         <button type="submit" class="btn btn-primary">Envoyer son post</button>
     </form>
-    <?php
-    $body = ob_get_clean();
-    require('template.php');
-    ?>
 </div>
+<?php
+$body = ob_get_clean();
+require('template.php');
+?>

@@ -39,9 +39,11 @@ class PostRepository
         $result->bindValue(':updated_at', NULL);
         $result->bindValue(':deleted_at', NULL);
         $result->execute();
+
+        header('Location: index.php?page=post&action=read&id=' . $db->lastInsertId());
     }
 
-    public function updatePost(Post $post): void
+    public function updatePost($post): void
     {
         $database = new Database;
         $db = $database->checkConnection();
@@ -57,5 +59,16 @@ class PostRepository
         $result->execute();
 
         header('Location: index.php?page=post&action=read&id=' . $_GET['id']);
+    }
+
+    public function deletePost($id): void
+    {
+        $database = new Database;
+        $db = $database->checkConnection();
+        $result = $db->prepare('DELETE FROM post WHERE id=:id');
+        $result->bindValue(':id', $id, \PDO::PARAM_INT);
+        $result->execute();
+
+        header('Location: index.php?page=post&action=list');
     }
 }
