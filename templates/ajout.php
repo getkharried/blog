@@ -17,10 +17,10 @@
             <textarea class="form-control" name="content" id="content" rows="15"></textarea>
         </div>
 
-
         <button type="submit" class="btn btn-primary">Envoyer son post</button>
     </form>
 </div>
+<script type="text/javascript" src="assets/js/update.js"></script>
 <?php
 $body = ob_get_clean();
 require('template.php');

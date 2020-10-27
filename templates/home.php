@@ -6,7 +6,7 @@
                 <div class="card mb-4 shadow-sm">
                     <img src="<?= $post['linkImg']; ?>" class="card-img-top">
                     <div class="card-body">
-                        <div class="card-title"><?= $post['title']; ?></div>
+                        <div class="card-title" id="oui"><?= $post['title']; ?></div>
                         <div class="card-text"><?= $post['content']; ?></div>
                         <hr>
                         <div class="d-flex justify-content-between align-items-center">
@@ -25,6 +25,7 @@
         <?php } ?>
     </div>
 </div>
+<script type="text/javascript" src="assets/js/update.js"></script>
 <?php
 $body = ob_get_clean();
 require 'template.php';
