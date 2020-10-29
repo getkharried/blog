@@ -21,7 +21,11 @@
                     <a class="dropdown-item" href="?page=client&action=profil">Voir mon profil</a>
                     <a class="dropdown-item" href="#">Paramètres</a>
                     <div class="dropdown-divider"></div>
+                    <?php if(!isset($_SESSION['username'])){ ?>
                     <a class="dropdown-item" href="?page=client&action=read">Se connecter</a>
+                    <?php }else{ ?>
+                    <a class="dropdown-item" href="?page=client&action=close">Se déconnecter</a>
+                    <?php } ?>
                 </div>
             </div>
 

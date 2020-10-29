@@ -1,10 +1,10 @@
 <?php ob_start(); ?>
 <div class="container">
-    <div class="alert alert-warning">
-        <?php if (null !== $this->session->get('error')) {
-            echo $this->session->showFlashMessage('error');
-        } ?>
-    </div>
+    <?php if (null !== $this->session->get('error')) { ?>
+        <div class="alert alert-warning">
+            <?= $this->session->showFlashMessage('error'); ?>
+        </div>
+    <?php } ?>
 
     <form action="?page=client&action=read" method="POST">
         <div class="row">

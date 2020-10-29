@@ -59,8 +59,12 @@ class ClientController{
 
             if(($this->clientRepo->passwordVerify($client))){
                 $this->clientRepo->loginClient($client);
+                $clientInfo = $this->clientRepo->getClientByUsername($client->getUsername());
+                $client->setId($clientInfo[0]['id']);
 
                 $this->session->set('username', $client->getUsername());
+                $this->session->set('idClient', $client->getId());
+                $this->session->set('id', $client->getId());
 
                 header('Location: ?page=post&action=list');
             }
@@ -87,6 +91,12 @@ class ClientController{
             header('Location: ?page=post&action=list');
 
         require_once 'templates/profil.php';
+    }
+
+    public function close()
+    {
+        $this->session->stop();
+        header('Location: ?page=post&action=list');
     }
     
 }

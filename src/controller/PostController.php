@@ -38,7 +38,7 @@ class PostController
 
     public function read()
     {
-        if(isset($_GET['id'])) {
+        if(!isset($_GET['id'])) {
             header('Location: index.php?page=post&action=list');
         }
 
@@ -48,7 +48,7 @@ class PostController
 
     public function update()
     {
-        if(isset($_GET['id'])) {
+        if(!isset($_GET['id'])) {
             header('Location: index.php?page=post&action=list');
         }
 

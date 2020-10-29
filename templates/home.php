@@ -25,7 +25,6 @@
         <?php } ?>
     </div>
 </div>
-<script type="text/javascript" src="assets/js/update.js"></script>
 <?php
 $body = ob_get_clean();
 require 'template.php';

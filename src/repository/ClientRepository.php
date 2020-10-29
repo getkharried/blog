@@ -22,6 +22,15 @@ class ClientRepository
         return $result->fetchAll(\PDO::FETCH_ASSOC);
     }
 
+    public function getClientByUsername($username)
+    {
+        $db = $this->database->checkConnection();
+        $result = $db->prepare('SELECT * FROM `client` WHERE username = :username');
+        $result->bindValue(':username', $username, \PDO::PARAM_STR);
+        $result->execute();
+        return $result->fetchAll(\PDO::FETCH_ASSOC);
+    }
+
     public function createClient(Client $client)
     {
         $hash = password_hash($client->getPass(), PASSWORD_DEFAULT);
