@@ -21,7 +21,6 @@
     </form>
 </div>
 <?php
-echo 'Bienvenue ' . $_SESSION['username'];
 $body = ob_get_clean();
 require('template.php');
 ?>

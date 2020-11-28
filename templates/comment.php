@@ -1,6 +1,7 @@
 <div class="shadow-lg rounded">
         <div class="input-group mb-3">
             <input type="hidden" value="<?= $_SESSION['idClient']; ?>" id="sessionId">
+            <input type="hidden" value="<?= $_SESSION['username']; ?>" id="username">
             <input type="hidden" value="<?= $_GET['id']; ?>" id="idPost">
             <input type="text" class="form-control" placeholder="Ecrire un commentaire" id="link">
             <div class="input-group-append">

@@ -13,7 +13,7 @@ class CommentRepository
         $db = $database->checkConnection();
         $result = $db->prepare('SELECT * FROM `comment` WHERE id_post = :idPost');
         $result->bindValue(':idPost', $idPost, \PDO::PARAM_INT);
-        return $result->fetchAll(\PDO::FETCH_ASSOC);
+        return json_encode($result->fetchAll(\PDO::FETCH_ASSOC));
     }
 
     public function insertComment(Comment $comment): void

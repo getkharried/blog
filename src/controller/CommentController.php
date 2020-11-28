@@ -18,7 +18,8 @@ class CommentController
 
     public function list()
     {
-        $posts = $this->commentRepo->getComments();
+        $posts = $this->commentRepo->getComments($_POST['idPost']);
+        return $posts;
     }
 
     public function create()

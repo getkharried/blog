@@ -21,7 +21,7 @@ class Routeur
         } elseif (isset($_GET['page']) && $_GET['page'] === 'comment') {
             $controller = new CommentController;
         } else {
-            $controller = new DefaultController;
+            header("Location: ?page=post&action=list");
         }
         $controller->{$action}();
     }
